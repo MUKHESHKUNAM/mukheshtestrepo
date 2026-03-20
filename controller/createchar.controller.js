@@ -3,11 +3,9 @@ const { defFilePath } = require("../constants/deffilepath");
 const { writejson } = require("../utilities/util.json");
 
 const charcontroller = (req, res) => {
-  const charres = characters;
-  charitems = charres.items;
-  const paylode = req.body;
-  charitems.push(paylode);
-  writejson(defFilePath, charitems);
+  const payload = req.body;
+  characters.items.push(payload);
+  writejson(defFilePath, characters);
   res.status(200).json({
     code: "000",
     message: "created sucessfully!!",
